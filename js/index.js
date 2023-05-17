@@ -14,3 +14,30 @@ const quotes = [
   ];
 
 // Write your Javascriot code here
+
+
+
+// Funktion um ein zufälliges Zitat zu erzeugen
+function getRandomQuote() {                                     //verwendet Math.floor und Math.random, um eine zufällige 
+  const randomIndex = Math.floor(Math.random() * quotes.length);//Indexzahl zu erzeugen, die verwendet wird, um ein Zitat 
+  return quotes[randomIndex];                                   //aus dem Array quotes zurückzugeben.
+}
+
+
+// Funktion um das Zitatelement mit einem zufälligen Zitat zu aktualisieren
+function displayRandomQuote() {
+  const quoteElement = document.getElementById("quote");      // ein Element anhand seiner ID abruft und den textContent des 
+  quoteElement.textContent = getRandomQuote();                //Elements auf das von der Funktion getRandomQuote 
+}                                                             //zurückgegebene Zitat setzt.
+
+
+
+// Event listener für die Schaltfläche (Button) 'Zufälliges Zitat'
+const randomButton = document.getElementById("randomButton"); //Diese Zeile fügt der Konstante randomButton einen 
+randomButton.addEventListener("click", displayRandomQuote);   //Ereignis-Listener hinzu, so dass die Funktion 
+                                                              //displayRandomQuote aufgerufen wird, wenn sie angeklickt wird.
+
+
+// Zufälliges Anfangsangebot beim Laden der Seite
+displayRandomQuote();                                   // Diese Zeile ruft die Funktion displayRandomQuote auf, um ein 
+                                                        //zufälliges Zitat anzuzeigen, wenn die Seite geladen wird.
